@@ -10,7 +10,7 @@ node 'master.puppet.vm' { # this is the hostname of the server
   include role::master_server
   file {'/root/README2':
     ensure => file,
-    content => $fqdn,
+    content => "Welcome to ${fqdn}\n",
   }
 }
 
