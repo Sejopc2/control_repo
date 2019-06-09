@@ -8,6 +8,10 @@ node default {
 
 node 'master.puppet.vm' { # this is the hostname of the server
   include role::master_server
+  file {'/root/README2':
+    ensure => file,
+    content => $fqdn,
+  }
 }
 
 node /^web/ {
@@ -17,3 +21,5 @@ node /^web/ {
 node /^db/ {
   include role::db_server
 }
+
+
